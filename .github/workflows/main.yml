@@ -19,7 +19,7 @@ jobs:
 
       - name: Send Modified File Content
         env:
-          WEBHOOK_URL: http://13.232.251.113:5005  # Replace with your actual webhook URL
+          WEBHOOK_URL: http://13.232.251.113:5005/scan  # Replace with your actual webhook URL
           WEBHOOK_SECRET: ${{ secrets.WEBHOOK_SECRET }}  # Store your secret in GitHub Secrets
         run: |
           for file in $(git diff --name-only ${{ github.event.before }} ${{ github.sha }}); do
